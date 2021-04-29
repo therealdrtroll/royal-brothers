@@ -22,7 +22,7 @@ const getLocationFailure = () => {
 export const getLocationHandler = (search) => (dispatch) => {
   dispatch(getLocationRequest());
   return axios
-    .get(`http://localhost:8080/locations/${search}`)
+    .get(`${process.env.REACT_APP_BASE}/locations/${search}`)
     .then((res) => dispatch(getLocationSuccess(res.data)))
     .catch((err) => getLocationFailure());
 };
@@ -49,7 +49,7 @@ const chooseLocationFailure = () => {
 export const chooseLocationHandler = (id) => (dispatch) => {
   dispatch(chooseLocationRequest());
   return axios
-    .get(`http://localhost:8080/location/${id}/bikes`)
+    .get(`${process.env.REACT_APP_BASE}/location/${id}/bikes`)
     .then((res) => dispatch(chooseLocationSuccess(res.data.data)))
     .catch((err) => dispatch(chooseLocationFailure()));
 };

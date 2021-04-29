@@ -24,7 +24,7 @@ const rentalsFailure = () => {
 export const rentalsHandler = (payload) => (dispatch) => {
   dispatch(rentalsRequest());
   return axios
-    .post("http://localhost:8080/rentals", payload)
+    .post(`${process.env.REACT_APP_BASE}/rentals`, payload)
     .then((res) => dispatch(rentalsSuccess()))
     .then((err) => dispatch(rentalsFailure()));
 };
@@ -51,7 +51,7 @@ const monthlyFailure = () => {
 export const monthlyHandler = (payload) => (dispatch) => {
   dispatch(monthlyRequest());
   return axios
-    .post("http://localhost:8080/months", payload)
+    .post(`${process.env.REACT_APP_BASE}/months`, payload)
     .then((res) => dispatch(monthlySuccess()))
     .then((err) => dispatch(monthlyFailure()));
 };

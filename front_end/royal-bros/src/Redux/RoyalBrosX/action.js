@@ -1,36 +1,31 @@
-import * as actions from './actionTypes'
-import axios from 'axios'
+import * as actions from "./actionTypes";
+import axios from "axios";
 
-const getBikeReq=()=>{
-    return(
-        {
-            type:actions.GET_BIKE_REQUEST
-        }
-    )
-}
+const getBikeReq = () => {
+  return {
+    type: actions.GET_BIKE_REQUEST,
+  };
+};
 
-const getBikeSucc=(payload)=>{
-    return(
-        {
-            type:actions.GET_BIKE_SUCCESS,
-            payload
-        }
-    )
-}
+const getBikeSucc = (payload) => {
+  return {
+    type: actions.GET_BIKE_SUCCESS,
+    payload,
+  };
+};
 
-const getBikeFail=()=>{
-    return(
-        {
-            type:actions.GET_BIKE_FAILURE
-        }
-    )
-}
+const getBikeFail = () => {
+  return {
+    type: actions.GET_BIKE_FAILURE,
+  };
+};
 
-const getBike=(_id)=>(dispatch)=>{
-    dispatch(getBikeReq())
-    return axios.get(`http://localhost:8080/bikes/${_id}`)
-    .then((res)=>dispatch(getBikeSucc(res.data.data)))
-    .catch((err)=>dispatch(getBikeFail))
-}
+const getBike = (_id) => (dispatch) => {
+  dispatch(getBikeReq());
+  return axios
+    .get(`${process.env.REACT_APP_BASE}/bikes/${_id}`)
+    .then((res) => dispatch(getBikeSucc(res.data.data)))
+    .catch((err) => dispatch(getBikeFail));
+};
 
-export default getBike
+export default getBike;
