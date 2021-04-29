@@ -24,7 +24,7 @@ export const getRentalsHandler = (id) => (dispatch) => {
   console.log(id, "from actions");
   dispatch(getRentalsRequest());
   return axios
-    .get(`${process.env.REACT_APP_BASE}/rentals/${id}`)
+    .get(`https://royal-backend.herokuapp.com/rentals/${id}`)
     .then((res) => dispatch(getRentalsSuccess(res.data)))
     .catch((err) => dispatch(getRentalsFailure()));
 };
@@ -54,7 +54,7 @@ export const getMonthlyHandler = (id) => (dispatch) => {
   console.log(id, "from actions");
   dispatch(getMonthlyRequest());
   return axios
-    .get(`${process.env.REACT_APP_BASE}/months/${id}`)
+    .get(`https://royal-backend.herokuapp.com/months/${id}`)
     .then((res) => dispatch(getMonthlySuccess(res.data)))
     .catch((err) => dispatch(getMonthlyFailure()));
 };

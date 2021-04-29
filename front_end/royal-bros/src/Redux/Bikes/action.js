@@ -20,7 +20,7 @@ const getHostsFailure = () => {
 const getBikes = (id) => (dispatch) => {
   dispatch(getBikesRequest());
   return axios
-    .get(`${process.env.REACT_APP_BASE}/location/${id}/bikes`)
+    .get(`https://royal-backend.herokuapp.com/location/${id}/bikes`)
     .then((res) => dispatch(getBikesSuccess(res.data.data.bikes)))
     .catch((err) => dispatch(getHostsFailure()));
 };

@@ -23,7 +23,7 @@ const getBikeFail = () => {
 const getBike = (_id) => (dispatch) => {
   dispatch(getBikeReq());
   return axios
-    .get(`${process.env.REACT_APP_BASE}/bikes/${_id}`)
+    .get(`https://royal-backend.herokuapp.com/bikes/${_id}`)
     .then((res) => dispatch(getBikeSucc(res.data.data)))
     .catch((err) => dispatch(getBikeFail));
 };

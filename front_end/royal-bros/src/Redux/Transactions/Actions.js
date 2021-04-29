@@ -24,7 +24,7 @@ const rentalsFailure = () => {
 export const rentalsHandler = (payload) => (dispatch) => {
   dispatch(rentalsRequest());
   return axios
-    .post(`${process.env.REACT_APP_BASE}/rentals`, payload)
+    .post(`https://royal-backend.herokuapp.com/rentals`, payload)
     .then((res) => dispatch(rentalsSuccess()))
     .then((err) => dispatch(rentalsFailure()));
 };
@@ -51,7 +51,7 @@ const monthlyFailure = () => {
 export const monthlyHandler = (payload) => (dispatch) => {
   dispatch(monthlyRequest());
   return axios
-    .post(`${process.env.REACT_APP_BASE}/months`, payload)
+    .post(`https://royal-backend.herokuapp.com/months`, payload)
     .then((res) => dispatch(monthlySuccess()))
     .then((err) => dispatch(monthlyFailure()));
 };

@@ -19,7 +19,7 @@ const getBikesFilterFailure = () => {
 const getBikesFilters = (arr) => (dispatch) => {
   dispatch(getBikesFilterRequest());
   return axios
-    .post(`${process.env.REACT_APP_BASE}/filters/bikes`, arr)
+    .post(`https://royal-backend.herokuapp.com/filters/bikes`, arr)
     .then((res) => {
       console.log(res.data);
       dispatch(getBikesFilterSuccess(res.data));

@@ -23,7 +23,7 @@ const signupFailure = () => {
 export const signupHandler = (payload) => (dispatch) => {
   dispatch(signupRequest());
   return axios
-    .post(`${process.env.REACT_APP_BASE}/users/signup`, payload)
+    .post(`https://royal-backend.herokuapp.com/users/signup`, payload)
     .then((res) => dispatch(signupSuccess(res.data)))
     .catch((err) => console.log(err), dispatch(signupFailure()));
 };
@@ -50,7 +50,7 @@ const loginFailure = () => {
 export const loginHandler = (payload) => (dispatch) => {
   dispatch(loginRequest());
   return axios
-    .post(`${process.env.REACT_APP_BASE}/users/login`, payload)
+    .post(`https://royal-backend.herokuapp.com/users/login`, payload)
     .then((res) => dispatch(loginSuccess(res.data)))
     .catch((err) => dispatch(loginFailure()));
 };
