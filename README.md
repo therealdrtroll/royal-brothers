@@ -11,6 +11,17 @@ Royal brothers is a website where we can book bikes on a rental basis
 * References - [MDN](https://developer.mozilla.org/en-US/) | [w3schools](https://www.w3schools.com/)
 
 
+### Features
+* Login and Signup
+* A user can choose a location from where he wants to choose a bike.
+* User can choose the date and time for pickup and drop along with the choice of his/her bike.
+* A user can choose between monthly and daily rental plans.
+* A user can pay through card.
+* All the order history is recorded in user profile.
+
+## Known Issues
+ * Not responsive for tablets and phones.
+
 ## Installation
 
 clone the repository into the local system, and install necessary packages in both the front end and the back end.
